@@ -3,10 +3,13 @@
 #include "../Headers/common.h"
 #include "../Headers/searching.h"
 #include "../Headers/sorting.h"
+
 #define arr_size 12
 
 void test_sorting_algo(s32*, u16, void (*algo)(s32*, u16));
 void print_arr(s32*, u16);
+
+
 int main()
 {
     s32 arr[arr_size] = {3,5,7,1,8,6,10,5,19,2,3};
@@ -15,11 +18,18 @@ int main()
     
 
     // THIS SHOUD PRINT ARRAY BEOFRE AND AFTER BEING SORTED
-    test_sorting_algo(arr, arr_size, &iterative_quick_sort);    
+    test_sorting_algo(arr, arr_size, &iterative_quick_sort);  
+
    
-    return 1;
+   
+    return 0;
 }
 
+
+/* SORTING ALGORITHM TESTING FUNCTION
+    @param arr Array to be sorted
+    @param size Size of the array
+    @param algo(s32,u16) The algorithm to be tested */
 void test_sorting_algo(s32 *arr, u16 size, void (*algo)(s32*, u16))
 {
     printf("Before: ");
@@ -28,6 +38,7 @@ void test_sorting_algo(s32 *arr, u16 size, void (*algo)(s32*, u16))
     printf("After: ");
     print_arr(arr, size);
 }
+
 
 void print_arr(s32 *arr, u16 size)
 {
